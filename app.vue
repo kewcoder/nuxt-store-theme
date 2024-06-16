@@ -32,6 +32,8 @@ onMounted(() => {
 </script>
 <template>
   <div>
-    {{  theme.general.top_banner_content }}
+    {{  theme.general.top_banner_content }} 
+
+    <!-- test -->
   </div>
 </template>
