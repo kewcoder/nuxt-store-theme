@@ -9,6 +9,12 @@ const useTheme = () => useState('theme', () => {
 })
 const theme = useTheme() 
 
+await callOnce(async () => {
+  const data = await $fetch('https://staging.hitpay.shop/juizzy/shop-api/storefront')
+  console.log('data', data)
+  theme.value = data.store_design
+})
+
 onMounted(() => {
   window.onmessage = function (e) {
     if(e?.data?.event === 'store_design_changed'){
@@ -23,6 +29,9 @@ onMounted(() => {
       "*",
   );
 })
+
+// https://staging.hitpay.shop/juizzy/shop-api/storefront
+
 </script>
 <template>
   <div>
