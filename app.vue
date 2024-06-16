@@ -29,9 +29,6 @@ onMounted(() => {
       "*",
   );
 })
-
-// https://staging.hitpay.shop/juizzy/shop-api/storefront
-
 </script>
 <template>
   <div>
