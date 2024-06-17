@@ -1,40 +1,13 @@
-<script setup>
-import { onMounted } from 'vue'
-
-const useTheme = () => useState('theme', () => {
-  return {
-    general: {},
-    sections: {}
-  }
-})
-const theme = useTheme() 
-
-await callOnce(async () => {
-  const data = await $fetch('https://staging.hitpay.shop/juizzy/shop-api/storefront')
-  console.log('data', data)
-  theme.value = data.store_design
-})
-
-onMounted(() => {
-  window.onmessage = function (e) {
-    if(e?.data?.event === 'store_design_changed'){
-      theme.value = e?.data?.data
-    }
-    console.log('new theme settings :',e?.data?.event)
-  };
-  window.top?.postMessage(
-      {
-          event: "request_store_design_settings",
-      },
-      "*",
-  );
-})
-</script>
 <template>
-  <div>
-    {{  theme.general.top_banner_content }} 
-
-    <!-- test -->
-     this is staging
-  </div>
+  <UContainer>
+    <UCard class="mt-10">
+      <template #header>
+        <div class="flex justify-between">
+          <h1>Welcome to Nuxt UI Starter</h1>
+          <ColorScheme><USelect v-model="$colorMode.preference" :options="['system', 'light', 'dark']" /></ColorScheme>
+        </div>
+      </template>
+      <UButton icon="i-heroicons-book-open" to="https://ui.nuxt.com" target="_blank">Open Nuxt UI Documentation</UButton>
+    </UCard>
+  </UContainer>
 </template>
