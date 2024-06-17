@@ -1,0 +1,3 @@
+<template>
+   Search Page
+</template>
