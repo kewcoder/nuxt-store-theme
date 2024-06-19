@@ -1,3 +1,7 @@
+<script setup>
+const theme = useTheme()
+ </script>
 <template>
-    Product Page
+      <DefaultProductPage v-if="theme?.name == 'default'"  />
+      <JuizzyProductPage v-if="theme?.name == 'juizzy'"  />
 </template>

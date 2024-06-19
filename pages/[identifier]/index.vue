@@ -1,7 +1,7 @@
-<script>
-  // if custom domain check to pages
-  // if not custom domain check identifier and show home pages
-</script>
+<script setup>
+const theme = useTheme()
+ </script>
 <template>
-    Home Page
+    <DefaultHomePage v-if="theme?.name == 'default'"  />
+    <JuizzyHomePage v-if="theme?.name == 'juizzy'"  />
 </template>

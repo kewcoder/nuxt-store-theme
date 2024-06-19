@@ -1,6 +1,3 @@
 export default defineAppConfig({
-  ui: {
-    primary: 'lime',
-    gray: 'neutral',
-  }
+  API_URL: 'https://api.shop.src.test/'
 })

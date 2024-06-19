@@ -2,5 +2,5 @@
 const theme = useTheme()
  </script>
 <template>
-    <SharedCartPage v-if="theme.name"  />
+    <SharedLinkPage v-if="theme.name"  />
 </template>

@@ -1,3 +1,7 @@
+<script setup>
+const theme = useTheme()
+ </script>
 <template>
-    Cart Page
+    <DefaultCartPage v-if="theme?.name == 'default'"  />
+    <JuizzyCartPage v-if="theme?.name == 'juizzy'"  />
 </template>
